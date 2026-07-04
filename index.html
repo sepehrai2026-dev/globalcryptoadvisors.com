@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Crypto Advisors — Digital Asset Wealth Management</title>
+<meta name="description" content="Global crypto investment advisory specializing in wealth management, estate planning for digital assets, tax-loss harvesting, staking optimization, and risk assessment.">
+<meta name="keywords" content="crypto wealth management, digital asset estate planning, tax-loss harvesting crypto, staking optimization, crypto risk assessment, market intelligence">
+<meta property="og:title" content="Global Crypto Advisors — Digital Asset Wealth Management">
+<meta property="og:description" content="Global crypto investment advisory specializing in wealth management, estate planning for digital assets, tax-loss harvesting, staking optimization, and risk assessment.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://globalcryptoadvisors.com">
+<link rel="canonical" href="https://globalcryptoadvisors.com">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:{{site.accentColor}};
+  --accent-light:{{site.accentLight}};
+  --accent-dark:{{site.accentDark}};
+  --bg:#0a0a0a;
+  --bg-card:#111111;
+  --bg-alt:#0e0e0e;
+  --text:#e8e8e8;
+  --text-secondary:#999999;
+  --text-muted:#555555;
+  --border:#222222;
+  --border-accent:#333333;
+}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* --- Hide emoji placeholders --- */
+.nav-logo-icon,
+.service-icon{
+  position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0
+}
+
+/* --- Nav --- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,10,10,0.85);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border)
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;padding:1rem 2rem;
+  display:flex;justify-content:space-between;align-items:center
+}
+.nav-brand{
+  color:var(--text);text-decoration:none;font-weight:700;font-size:1.05rem;
+  letter-spacing:-0.01em
+}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{
+  color:var(--text-secondary);text-decoration:none;font-size:0.85rem;
+  font-weight:500;letter-spacing:0.02em;text-transform:uppercase;
+  transition:color 0.2s
+}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  color:var(--text) !important;
+  border:1px solid var(--border-accent);
+  padding:0.45rem 1.25rem;
+  transition:border-color 0.2s,color 0.2s
+}
+.nav-cta:hover{border-color:var(--accent) !important;color:var(--accent) !important}
+
+/* --- Hero --- */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  position:relative;padding:8rem 2rem 6rem;
+  background:var(--bg)
+}
+.hero::before{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(255,255,255,0.02),transparent);
+  pointer-events:none
+}
+.hero-content{
+  max-width:800px;text-align:center;position:relative;z-index:1
+}
+.hero-label{
+  font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1.5rem
+}
+.hero-title{
+  font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;line-height:1.1;
+  letter-spacing:-0.03em;margin-bottom:1.5rem;color:var(--text)
+}
+.hero-sub{
+  font-size:1.1rem;color:var(--text-secondary);max-width:560px;margin:0 auto 2.5rem;
+  line-height:1.7
+}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero-fade{
+  position:absolute;bottom:0;left:0;right:0;height:120px;
+  background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none
+}
+
+/* --- Buttons --- */
+.btn{
+  display:inline-block;padding:0.8rem 2rem;font-size:0.9rem;font-weight:600;
+  text-decoration:none;border-radius:0;letter-spacing:0.02em;
+  transition:all 0.25s ease;cursor:pointer;font-family:inherit
+}
+.btn-primary{
+  background:transparent;color:var(--text);border:1px solid var(--border-accent)
+}
+.btn-primary:hover{
+  border-color:var(--accent);color:var(--accent);background:rgba(255,255,255,0.02)
+}
+.btn-outline{
+  background:transparent;color:var(--text-secondary);border:1px solid var(--border)
+}
+.btn-outline:hover{color:var(--text);border-color:var(--text-muted)}
+
+/* --- Layout --- */
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.section{padding:5rem 0}
+
+/* --- Section headers --- */
+.section-header{margin-bottom:3.5rem;text-align:center}
+.section-title{
+  font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;
+  margin-bottom:1rem
+}
+.section-rule{
+  width:40px;height:1px;background:var(--accent);margin:0 auto
+}
+.section-sub{
+  color:var(--text-secondary);font-size:0.95rem;margin-top:1.25rem;
+  max-width:500px;margin-left:auto;margin-right:auto
+}
+
+/* --- Service grid --- */
+.service-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;
+  border:1px solid var(--border);counter-reset:service-counter
+}
+.service-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  padding:2.5rem 2rem;position:relative;
+  transition:background 0.3s ease;counter-increment:service-counter;
+  margin:-1px 0 0 -1px
+}
+.service-card:hover{background:#161616}
+.service-num{
+  font-size:0.75rem;font-weight:600;color:var(--accent);
+  letter-spacing:0.05em;margin-bottom:1.25rem;display:block
+}
+.service-num::before{
+  content:counter(service-counter, decimal-leading-zero)
+}
+.service-name{
+  font-size:1.05rem;font-weight:700;margin-bottom:0.75rem;
+  letter-spacing:-0.01em;color:var(--text)
+}
+.service-desc{
+  font-size:0.88rem;color:var(--text-secondary);line-height:1.65
+}
+
+/* --- About --- */
+.about{border-top:1px solid var(--border)}
+.about-body{max-width:720px;margin:0 auto}
+.about-content{
+  font-size:0.95rem;color:var(--text-secondary);line-height:1.8
+}
+.about-content h3{
+  color:var(--text);font-size:1.1rem;font-weight:700;
+  margin:2.5rem 0 0.75rem;letter-spacing:-0.01em
+}
+.about-content p{margin-bottom:1.25rem}
+.about-content strong{color:var(--text);font-weight:600}
+.about-content ul,.about-content ol{
+  margin:0.75rem 0 1.25rem 1.25rem;color:var(--text-secondary)
+}
+.about-content li{margin-bottom:0.4rem;line-height:1.7}
+
+/* --- Contact --- */
+.contact{border-top:1px solid var(--border);background:var(--bg-alt)}
+.contact-form{max-width:640px;margin:0 auto}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.form-group{margin-bottom:1.5rem}
+.form-group label{
+  display:block;font-size:0.75rem;font-weight:600;
+  letter-spacing:0.06em;text-transform:uppercase;
+  margin-bottom:0.5rem;color:var(--text-muted)
+}
+.form-group input,
+.form-group textarea{
+  width:100%;padding:0.85rem 1rem;
+  border:1px solid var(--border);border-radius:0;
+  font-size:0.9rem;background:var(--bg);color:var(--text);
+  font-family:inherit;transition:border-color 0.2s
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{color:var(--text-muted)}
+.form-group input:focus,
+.form-group textarea:focus{outline:none;border-color:var(--accent)}
+.form-btn{
+  width:100%;padding:0.9rem;background:transparent;color:var(--text);
+  border:1px solid var(--border-accent);border-radius:0;
+  font-size:0.9rem;font-weight:600;cursor:pointer;
+  letter-spacing:0.02em;transition:all 0.25s ease
+}
+.form-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* --- Footer --- */
+.footer{
+  border-top:1px solid var(--border);padding:3rem 0;background:var(--bg)
+}
+.footer-inner{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:2rem
+}
+.footer-brand{font-weight:700;font-size:0.95rem;color:var(--text)}
+.footer-links a{
+  color:var(--text-muted);text-decoration:none;font-size:0.8rem;
+  letter-spacing:0.02em;transition:color 0.2s
+}
+.footer-links a:hover{color:var(--text-secondary)}
+.footer-bottom p{
+  font-size:0.72rem;color:var(--text-muted);text-align:center;
+  line-height:1.6
+}
+
+/* --- Nav scroll state --- */
+.nav-scrolled{background:rgba(10,10,10,0.95);border-bottom-color:var(--border-accent)}
+
+/* --- Section fade-in --- */
+.section{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.section.visible{opacity:1;transform:translateY(0)}
+
+/* --- Responsive --- */
+@media(max-width:768px){
+  .nav-inner{padding:1rem 1.25rem}
+  .nav-links a:not(.nav-cta){display:none}
+  .hero{min-height:auto;padding:7rem 1.25rem 5rem}
+  .container{padding:0 1.25rem}
+  .section{padding:4rem 0}
+  .form-row{grid-template-columns:1fr}
+  .service-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;gap:1rem;text-align:center}
+}
+
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><span class="nav-logo-icon" aria-hidden="true">🌎</span>Global Crypto Advisors</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Book a Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-label">Global Crypto Advisors</div>
+    <h1 class="hero-title">Wealth management for the digital asset era</h1>
+    <p class="hero-sub">Comprehensive investment advisory combining traditional wealth management principles with deep expertise in digital assets, from estate planning to staking optimization.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+      <a href="#services" class="btn btn-outline">View Services</a>
+    </div>
+  </div>
+  <div class="hero-fade"></div>
+</header>
+
+<main>
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Investment Advisory Services</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+  <span class="service-icon" aria-hidden="true">💰</span>
+  <span class="service-num"></span>
+  <div class="service-name">Wealth Management</div>
+  <div class="service-desc">Holistic wealth management integrating digital and traditional assets with personalized allocation strategies, performance monitoring, and periodic portfolio reviews.</div>
+</div>
+
+<div class="service-card">
+  <span class="service-icon" aria-hidden="true">📜</span>
+  <span class="service-num"></span>
+  <div class="service-name">Estate Planning</div>
+  <div class="service-desc">Ensure your digital assets are protected and transferable with comprehensive estate planning including key management protocols, succession frameworks, and trust structures.</div>
+</div>
+
+<div class="service-card">
+  <span class="service-icon" aria-hidden="true">📉</span>
+  <span class="service-num"></span>
+  <div class="service-name">Tax-Loss Harvesting</div>
+  <div class="service-desc">Systematic identification of tax-loss harvesting opportunities across your crypto portfolio to offset gains and minimize your overall tax liability.</div>
+</div>
+
+<div class="service-card">
+  <span class="service-icon" aria-hidden="true">⚡</span>
+  <span class="service-num"></span>
+  <div class="service-name">Staking Optimization</div>
+  <div class="service-desc">Maximize yield from proof-of-stake assets with optimized validator selection, liquid staking strategies, and risk-adjusted staking allocation across protocols.</div>
+</div>
+
+<div class="service-card">
+  <span class="service-icon" aria-hidden="true">🛡️</span>
+  <span class="service-num"></span>
+  <div class="service-name">Risk Assessment</div>
+  <div class="service-desc">Comprehensive risk analysis covering market risk, protocol risk, counterparty risk, and regulatory risk with clear frameworks for position sizing and exposure management.</div>
+</div>
+
+<div class="service-card">
+  <span class="service-icon" aria-hidden="true">📡</span>
+  <span class="service-num"></span>
+  <div class="service-name">Market Intelligence</div>
+  <div class="service-desc">Proprietary research and market analysis including on-chain metrics, macro trend reports, and protocol deep-dives to keep your investment thesis current.</div>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Global Crypto Advisors</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="about-body">
+        <div class="about-content"><h3>Where Traditional Finance Meets Digital Assets</h3><p>Global Crypto Advisors bridges the gap between conventional wealth management and the digital asset frontier. We apply time-tested investment principles to the emerging crypto asset class, helping clients build and preserve wealth across both worlds.</p><h3>Long-Term Wealth Preservation</h3><p>Our approach goes beyond trading and speculation. We focus on long-term wealth building through diversified allocations, tax efficiency, estate planning, and risk-managed exposure to digital asset opportunities.</p><h3>Research-Driven Decisions</h3><p>Every recommendation is backed by rigorous research and analysis. Our market intelligence team monitors macro trends, on-chain data, protocol developments, and regulatory shifts to keep your strategy informed and adaptive.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Plan Your Future</h2>
+        <div class="section-rule"></div>
+        <p class="section-sub">Take the first step toward a comprehensive digital asset strategy. Our advisors are ready to discuss your wealth management goals.</p>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" rows="5" placeholder="Tell us about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-btn">Book a Consultation</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-brand"><span class="nav-logo-icon" aria-hidden="true">🌎</span>Global Crypto Advisors</span>
+      <div class="footer-links">
+        <a href="https://sepehr.ai" target="_blank" rel="noopener">sepehr.ai</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Global Crypto Advisors. All rights reserved. Global Crypto Advisors provides advisory services for informational purposes. Digital asset investments are speculative and involve substantial risk of loss. Past performance does not guarantee future results. This is not financial advice. Consult with qualified financial, tax, and legal professionals before making investment decisions.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const SITE_CONFIG = {"faqs":[{"q":"How do you approach crypto estate planning?","a":"We develop comprehensive succession plans for digital assets including secure key management protocols, documentation of holdings, trust structures where appropriate, and coordination with your estate attorney to ensure your crypto wealth is preserved and transferable."},{"q":"What is tax-loss harvesting in crypto?","a":"Tax-loss harvesting involves strategically selling underperforming digital assets to realize losses that offset capital gains elsewhere in your portfolio. Unlike traditional securities, crypto does not have wash sale restrictions in many jurisdictions, creating additional optimization opportunities."},{"q":"How do you manage risk in a volatile asset class?","a":"We employ position sizing frameworks, diversification across uncorrelated protocols, stop-loss strategies, and regular portfolio stress testing. Our goal is to capture upside while defining and limiting downside exposure to levels consistent with your risk tolerance."},{"q":"Can you integrate crypto advisory with my existing wealth management?","a":"Absolutely. We work alongside your existing financial advisor, CPA, and estate attorney to ensure your digital asset strategy complements your broader financial plan. We can also provide consolidated reporting across traditional and digital assets."}],"accentColor":"#475569","accentLight":"#e2e8f0","accentDark":"#334155","ctaText":"Book a Consultation"};
+/* Nav scroll state */
+(function() {
+  const nav = document.getElementById('nav');
+  let ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        nav.classList.toggle('nav-scrolled', window.scrollY > 60);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+
+/* Smooth scroll for anchor links */
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+/* Intersection observer for section fade-in */
+(function() {
+  var sections = document.querySelectorAll('.section');
+  if (!('IntersectionObserver' in window)) {
+    sections.forEach(function(s) { s.classList.add('visible'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  sections.forEach(function(s) { observer.observe(s); });
+})();
+
+/* Contact form */
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = this.querySelector('.form-btn');
+  var orig = btn.textContent;
+  btn.textContent = 'Message sent';
+  btn.style.borderColor = 'var(--accent)';
+  btn.style.color = 'var(--accent)';
+  this.reset();
+  setTimeout(function() {
+    btn.textContent = orig;
+    btn.style.borderColor = '';
+    btn.style.color = '';
+  }, 3000);
+});
+
+
+</script>
+</body>
+</html>
